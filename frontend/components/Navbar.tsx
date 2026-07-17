@@ -2,7 +2,7 @@ export default function Navbar() {
   return (
     <nav className="w-full flex items-center justify-between px-8 py-5 bg-slate-900 text-white">
       <h1 className="text-2xl font-bold text-blue-400">
-        ✈️ VoyageAI
+        Planora 
       </h1>
 
       <div className="flex gap-8">
