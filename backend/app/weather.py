@@ -13,6 +13,9 @@ def get_weather(city: str):
 
     response = requests.get(url, params=params)
 
+    print("WEATHER STATUS:", response.status_code)
+    print("WEATHER RESPONSE:", response.text)
+
     if response.status_code != 200:
         return None
 
@@ -22,7 +25,7 @@ def get_weather(city: str):
         "temperature": round(data["main"]["temp"]),
         "feels_like": round(data["main"]["feels_like"]),
         "humidity": data["main"]["humidity"],
-        "wind_speed": round(data["wind"]["speed"] * 3.6),  # m/s → km/h
+        "wind_speed": round(data["wind"]["speed"] * 3.6),
         "condition": data["weather"][0]["main"],
         "description": data["weather"][0]["description"],
         "icon": data["weather"][0]["icon"],

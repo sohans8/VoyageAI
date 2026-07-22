@@ -1,5 +1,3 @@
-import os
-print("RUNNING FROM:", os.getcwd())
 from fastapi import APIRouter
 
 from .models import TripRequest
@@ -13,6 +11,8 @@ router = APIRouter()
 @router.post("/generate-trip")
 def generate_trip(data: TripRequest):
 
+    print("===== ROUTE EXECUTED =====")
+
     itinerary = generate_itinerary(
         data.destination,
         data.days,
@@ -23,10 +23,8 @@ def generate_trip(data: TripRequest):
     image = get_destination_image(data.destination)
     weather = get_weather(data.destination)
 
-    print("========== DEBUG ==========")
-    print("IMAGE:", image)
-    print("WEATHER:", weather)
-    print("===========================")
+    print("IMAGE =", image)
+    print("WEATHER =", weather)
 
     return {
         "success": True,
@@ -34,3 +32,9 @@ def generate_trip(data: TripRequest):
         "image": image,
         "weather": weather,
     }
+
+image = get_destination_image(data.destination)
+weather = get_weather(data.destination)
+
+print("IMAGE =", image)
+print("WEATHER =", weather)

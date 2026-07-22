@@ -14,6 +14,9 @@ def get_destination_image(destination: str):
 
     response = requests.get(url, params=params)
 
+    print("UNSPLASH STATUS:", response.status_code)
+    print("UNSPLASH RESPONSE:", response.text[:500])
+
     if response.status_code != 200:
         return None
 
