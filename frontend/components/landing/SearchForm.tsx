@@ -24,7 +24,7 @@ export default function SearchForm() {
   const [travelStyle, setTravelStyle] = useState("Adventure");
 
   const [result, setResult] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState<string | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
   const [loading, setLoading] = useState(false);
@@ -57,7 +57,7 @@ export default function SearchForm() {
       });
 
       setResult(response.itinerary);
-      setImage(response.image);
+      setImage(response.image || "");
       setWeather(response.weather);
     } catch (err) {
       console.error("Trip generation error:", err);
