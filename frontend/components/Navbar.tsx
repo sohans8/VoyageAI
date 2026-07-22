@@ -1,18 +1,38 @@
+import Image from "next/image";
+
 export default function Navbar() {
   return (
-    <nav className="w-full flex items-center justify-between px-8 py-5 bg-slate-900 text-green">
-      <h1 className="text-2xl font-bold text-blue-400">
-        Planora - Your Travel Planner
-      </h1>
+    <nav className="w-full h-20 flex items-center justify-between px-8 bg-slate-900">
+      {/* Logo */}
+      <a href="/" className="flex items-center">
+        <Image
+          src="/frontendpubliclogo.png"
+          alt="Planora - Your Travel Planner"
+          width={350}
+          height={120}
+          priority
+          className="max-h-16 w-auto object-contain"
+        />
+      </a>
 
-      <div className="flex gap-8">
-        <a href="#" className="hover:text-blue-400">Home</a>
-        <a href="#" className="hover:text-blue-400">Trips</a>
-        <a href="#" className="hover:text-blue-400">About</a>
-        <a href="#" className="hover:text-blue-400">Contact</a>
+      {/* Navigation */}
+      <div className="flex gap-8 text-white font-medium">
+        <a href="#" className="hover:text-blue-400 transition">
+          Home
+        </a>
+        <a href="#" className="hover:text-blue-400 transition">
+          Trips
+        </a>
+        <a href="#" className="hover:text-blue-400 transition">
+          About
+        </a>
+        <a href="#" className="hover:text-blue-400 transition">
+          Contact
+        </a>
       </div>
 
-      <button className="bg-blue-600 px-5 py-2 rounded-lg hover:bg-blue-700">
+      {/* Login Button */}
+      <button className="bg-blue-600 px-5 py-2 rounded-lg hover:bg-blue-700 text-white transition">
         Login
       </button>
     </nav>
