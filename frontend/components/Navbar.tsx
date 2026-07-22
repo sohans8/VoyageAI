@@ -8,10 +8,10 @@ export default function Navbar() {
         <Image
           src="/frontendpubliclogo.png"
           alt="Planora - Your Travel Planner"
-          width={350}
-          height={120}
+          width={180}
+          height={60}
           priority
-          className="max-h-16 w-auto object-contain"
+          className="max-h-auto w-auto object-contain"
         />
       </a>
 
